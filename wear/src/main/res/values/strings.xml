@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Health Data Sharing</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="mobile_message">Mobile message</string>
+    <string name="phone_message">Phone Message</string>
+    <string name="message">Data Content</string>
+    <string name="message_log">Data log</string>
+    <string name="init">...</string>
+    <string name="start_sending">Start Job</string>
+    <string name="send_message_to_phone">Send Data to Phone</string>
+    <string name="not_available">Not available</string>
+</resources>
