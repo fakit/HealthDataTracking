@@ -1,2 +1,2 @@
 # HealthDataTracking
-HealthDataTracking Application for corona warning 
+HealthDataTracking Application for Corona warning 
