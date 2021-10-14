@@ -14,6 +14,7 @@ import android.icu.util.Calendar
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -24,6 +25,8 @@ import androidx.fragment.app.FragmentActivity
 import com.google.android.gms.wearable.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.nio.charset.StandardCharsets
+import java.util.*
+import kotlin.concurrent.schedule
 
 
 var StartPressed: Boolean=false
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity(), DataClient.OnDataChangedListener,
     private val APP_OPEN_WEARABLE_PAYLOAD_PATH = "/APP_OPEN_WEARABLE_PAYLOAD"
 
     private var mobileDeviceConnected: Boolean = false
-    private var CurrentSensorData = arrayOf("0.0", "0.0", "0.0")
+    private var CurrentSensorData = arrayOf("temp : 0.0", "heart : 0.0", "light : 0.0")
     private var LastSensorData=""
     private var mWearBodySensorsPermissionApproved = false
     private var mSensorManager: SensorManager? = null
@@ -55,6 +58,10 @@ class MainActivity : AppCompatActivity(), DataClient.OnDataChangedListener,
 
     private var messageEvent: MessageEvent? = null
     private var mobileNodeUri: String? = null
+
+    //Timer Check
+    lateinit var countdown_timer: CountDownTimer
+    var isRunning: Boolean = true;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -210,7 +217,7 @@ class MainActivity : AppCompatActivity(), DataClient.OnDataChangedListener,
             }//emd of if
             else if (messageEventPath.isNotEmpty() && messageEventPath == MESSAGE_ITEM_RECEIVED_PATH) {
                 try {
-                    setSensorData(s1)
+                    setSensorData(s1.toString())
 
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -235,45 +242,59 @@ class MainActivity : AppCompatActivity(), DataClient.OnDataChangedListener,
             }
         }
         if (mobileDeviceConnected) {
-        // The sensor type (as defined in the Sensor class).
-        val sensorType: Int = event!!.sensor.getType()
+                // The sensor type (as defined in the Sensor class).
+                val sensorType: Int = event!!.sensor.getType()
 
 
-        // The new data value of the sensor.  Both the light and proximity
-        // sensors report one value at a time, which is always the first
-        // element in the values array.
-        val currentValue: Float = event.values.get(0)
+                // The new data value of the sensor.  Both the light and proximity
+                // sensors report one value at a time, which is always the first
+                // element in the values array.
+                val currentValue: Float = event.values.get(0)
 
-        when (sensorType) {
-            Sensor.TYPE_AMBIENT_TEMPERATURE -> {
-                CurrentSensorData[0] = "temp : $currentValue"
-                sendSensorData()
+                when (sensorType) {
+                    Sensor.TYPE_AMBIENT_TEMPERATURE -> {
+                        CurrentSensorData[0] = "temp : $currentValue"
+                        SendCheck()
+                    }
+                    Sensor.TYPE_HEART_RATE -> {
+                        CurrentSensorData[1] = "heart : $currentValue"
+                        SendCheck()
+                    }
+                    Sensor.TYPE_LIGHT -> {
+                        CurrentSensorData[2] = "light : $currentValue"
+                        SendCheck()
+                    }
+                    else -> {
+                    }
+                }
             }
-            Sensor.TYPE_HEART_RATE -> {
-                CurrentSensorData[1] = "heart : $currentValue"
-                sendSensorData()
+
+    }
+    private fun SendCheck() {
+        if (isRunning) {
+            isRunning = false;
+            countdown_timer = object : CountDownTimer(5000, 1000) {
+                override fun onFinish() {
+                    //send Data
+                    sendSensorData()
+                    isRunning = true
+                }
+                override fun onTick(p0: Long) {}
             }
-            Sensor.TYPE_LIGHT -> {
-                CurrentSensorData[2] = "light : $currentValue"
-                sendSensorData()
-            }
-            else -> {
-            }
+            countdown_timer.start()
         }
-
-
     }
-
-    }
-
     private fun setSensorData(sbTemp: String) {
                     if (StartPressed) {
                         val sbTempArr =  sbTemp.split(":")
                         if (sbTempArr[0].trim()=="temp"){
-                            CurrentSensorData[0]="temp : "+sbTempArr[1]
+                            CurrentSensorData[0]="temp : "+ sbTempArr[1]
                         }
-                        if (sbTempArr[0].trim()=="heart"){
+                        else if (sbTempArr[0].trim()=="heart"){
                             CurrentSensorData[1]="heart : "+ sbTempArr[1]
+                        }
+                        else if (sbTempArr[0].trim()=="light"){
+                            CurrentSensorData[2]="light : "+ sbTempArr[1]
                         }
                         sendSensorData()
                     }
@@ -281,23 +302,25 @@ class MainActivity : AppCompatActivity(), DataClient.OnDataChangedListener,
 }
     private fun sendSensorData() {
         if (StartPressed) {
+                val CurrentSensorDataString =
+                    "\n" + CurrentSensorData[0] + "\n" + CurrentSensorData[1] + "\n" + CurrentSensorData[2] + "\n"
+                if (CurrentSensorDataString != LastSensorData) {
+                    val nodeId = messageEvent?.sourceNodeId!!
+                    // Set the data of the message to be the bytes of the Uri.
+                    val payload: ByteArray = CurrentSensorDataString.toByteArray()
 
-            val CurrentSensorDataString=CurrentSensorData[0]+"\n"+CurrentSensorData[1]+"\n"+CurrentSensorData[2]+"\n"
-            if (CurrentSensorDataString != LastSensorData) {
-                val nodeId = messageEvent?.sourceNodeId!!
-                // Set the data of the message to be the bytes of the Uri.
-                val payload: ByteArray = CurrentSensorDataString.toByteArray()
-
-                // Send the rpc
-                // Instantiates clients without member variables, as clients are inexpensive to
-                // create. (They are cached and shared between GoogleApi instances.)
-                val sendMessageTask =
-                    Wearable.getMessageClient(activityContext!!)
-                        .sendMessage(nodeId, MESSAGE_ITEM_RECEIVED_PATH, payload)
-                deviceconnectionStatusTv.text = "Running..."
-                LastSensorData=CurrentSensorDataString
-            }
+                    // Send the rpc
+                    // Instantiates clients without member variab
+                    // les, as clients are inexpensive to
+                    // create. (They are cached and shared between GoogleApi instances.)
+                    val sendMessageTask =
+                        Wearable.getMessageClient(activityContext!!)
+                            .sendMessage(nodeId, MESSAGE_ITEM_RECEIVED_PATH, payload)
+                    deviceconnectionStatusTv.text = "Running..."
+                    LastSensorData = CurrentSensorDataString
+                }
         }
+
 
     }
     fun permissionRequest() {
@@ -305,7 +328,7 @@ class MainActivity : AppCompatActivity(), DataClient.OnDataChangedListener,
             (ActivityCompat.checkSelfPermission(this, Manifest.permission.BODY_SENSORS)
                     === PackageManager.PERMISSION_GRANTED)
         if (!mWearBodySensorsPermissionApproved) {
-            // On 23+ (M+) devices, GPS permission not granted. Request permission.
+            // On devices, BODY SENSORS permission not granted. Request permission.
             ActivityCompat.requestPermissions(
                 this@MainActivity, arrayOf(Manifest.permission.BODY_SENSORS),
                 PERMISSION_REQUEST_READ_BODY_SENSORS
@@ -336,8 +359,6 @@ class MainActivity : AppCompatActivity(), DataClient.OnDataChangedListener,
             e.printStackTrace()
         }
     }
-
-
 }
 
 private fun Button.setOnClickListener() {

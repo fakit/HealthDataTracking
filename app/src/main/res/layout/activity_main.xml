@@ -1,19 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="com.fakit.wearabledatalayer.MainActivity">
 
+    <LinearLayout
+        android:id="@+id/settingsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="#DDCDCD"
+        android:orientation="vertical"
+        android:paddingLeft="50dip"
+        android:paddingTop="50dip"
+        android:paddingRight="50dip"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="223dp"
+            android:layout_height="280dp"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="MAN"
+                android:textOn="FRAU" />
+
+            <CheckBox
+                android:id="@+id/Fieber"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Fieber" />
+
+            <CheckBox
+                android:id="@+id/On_activity"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="In Aktivität" />
+
+            <CheckBox
+                android:id="@+id/gelenkschmerzen"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:text="Gelenkschmerzen" />
+
+            <CheckBox
+                android:id="@+id/coronaTest"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:text="Letzte 2 Wochen Positiv getestet" />
+
+            <CheckBox
+                android:id="@+id/alkoholGetrunken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alkohol getrunken" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="222dp"
+            android:layout_height="312dp"
+            android:orientation="horizontal"
+            android:paddingTop="50dip">
+
+            <Button
+                android:id="@+id/Speichernbutton"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:width="5dip"
+                android:maxWidth="50dip"
+                android:text="Speichern" />
+
+            <Button
+                android:id="@+id/Abrechenbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Abrechen" />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ScrollView
+        android:id="@+id/mainAppView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:keepScreenOn="true">
+        android:keepScreenOn="true"
+        android:visibility="visible">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/settingsbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dip"
+                android:width="1dip"
+                android:background="#8A8686"
+                android:text="Serttings" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,13 +132,21 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="455dp"
                 android:orientation="vertical">
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="158dp"
+                    android:background="#F1E6E6"
+                    tools:ignore="MissingClass"
+                    tools:visibility="invisible" />
 
                 <ScrollView
                     android:id="@+id/scrollviewText"
                     android:layout_width="match_parent"
-                    android:layout_height="225dp">
+                    android:layout_height="296dp">
 
                     <TextView
                         android:id="@+id/messagelogTextView"
@@ -54,6 +157,7 @@
                         android:textColor="?TextViewHeaderColor"
                         android:textSize="12sp" />
                 </ScrollView>
+
             </LinearLayout>
 
 
@@ -74,13 +178,25 @@
                     android:textSize="15sp"
                     android:visibility="gone" />
 
-            </LinearLayout>
+                <Button
+                    android:id="@+id/checkwearablesButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:scrollbars="vertical"
+                    android:text="@string/check_for_connected_wearables"
+                    android:textColor="?TextInfoColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="1dp"
                 android:orientation="vertical">
 
 
@@ -106,28 +222,14 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="2"
                 android:orientation="vertical">
 
-
-                <Button
-                    android:id="@+id/checkwearablesButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="?attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:scrollbars="vertical"
-                    android:text="@string/check_for_connected_wearables"
-                    android:textColor="?TextInfoColor"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/sendmessageButton"
@@ -142,13 +244,10 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:visibility="gone" />
-
             </LinearLayout>
 
 
         </LinearLayout>
-
-
     </ScrollView>
 
 </RelativeLayout>
