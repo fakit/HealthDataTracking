@@ -1,253 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="false"
     android:orientation="horizontal"
-    tools:context="com.fakit.wearabledatalayer.MainActivity">
+    tools:context="com.fakit.healthdatatracking.MainActivity">
 
     <LinearLayout
-        android:id="@+id/settingsLayout"
+        android:id="@+id/mainAppView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:background="#DDCDCD"
+        android:keepScreenOn="true"
         android:orientation="vertical"
-        android:paddingLeft="50dip"
-        android:paddingTop="50dip"
-        android:paddingRight="50dip"
-        android:visibility="gone">
+        android:visibility="gone"
+        tools:visibility="visible">
 
-        <LinearLayout
-            android:layout_width="223dp"
-            android:layout_height="280dp"
-            android:orientation="vertical">
 
-            <ToggleButton
-                android:id="@+id/gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="MAN"
-                android:textOn="FRAU" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:gravity="top"
+            android:minHeight="?attr/actionBarSize"
 
-            <CheckBox
-                android:id="@+id/Fieber"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="Fieber" />
+            android:theme="?attr/actionBarTheme"
+            app:popupTheme="@style/ToolbarStyle" />
 
-            <CheckBox
-                android:id="@+id/On_activity"
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:text="In Aktivität" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/message_log"
+            android:textColor="?TextInfoColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <CheckBox
-                android:id="@+id/gelenkschmerzen"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:text="Gelenkschmerzen" />
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/graph"
+            android:layout_width="match_parent"
+            android:layout_height="221dp"
+            android:background="#F1E6E6"
+            android:padding="10dip"
+            android:visibility="visible"
+            tools:ignore="MissingClass"
+            tools:visibility="visible" />
 
-            <CheckBox
-                android:id="@+id/coronaTest"
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:text="Letzte 2 Wochen Positiv getestet" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            android:progressBackgroundTint="#1BFF03"
+            android:progressBackgroundTintMode="add"
+            android:progressTint="@color/colorAccent"
+            android:progressTintMode="multiply"
+            android:visibility="gone" />
 
-            <CheckBox
-                android:id="@+id/alkoholGetrunken"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Alkohol getrunken" />
+        <ScrollView
+            android:id="@+id/scrollviewText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dip"
+            android:background="@color/design_default_color_background"
+            android:minHeight="250dp"
+            android:padding="30dp"
+            tools:ignore="NestedScrolling">
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="222dp"
-            android:layout_height="312dp"
-            android:orientation="horizontal"
-            android:paddingTop="50dip">
-
-            <Button
-                android:id="@+id/Speichernbutton"
-                android:layout_width="106dp"
-                android:layout_height="wrap_content"
-                android:width="5dip"
-                android:maxWidth="50dip"
-                android:text="Speichern" />
-
-            <Button
-                android:id="@+id/Abrechenbutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Abrechen" />
-        </LinearLayout>
+            <TextView
+                android:id="@+id/recomandationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:text=""
+                android:textColor="#757575"
+                android:textSize="20sp"
+                android:visibility="visible" />
+        </ScrollView>
 
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/mainAppView"
+    <LinearLayout
+        android:id="@+id/welcomescreen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:keepScreenOn="true"
-        android:visibility="visible">
+        android:layout_height="match_parent"
+        android:background="@color/design_default_color_background"
+        android:orientation="vertical"
+        tools:visibility="gone">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:title="HealthDataTracking" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dip">
+
+            <ImageView
+                android:id="@+id/imageFilterView"
+                android:layout_width="wrap_content"
+                android:layout_height="406dp"
+                android:background="@color/design_default_color_background"
+                android:contentDescription="@string/wear_sample"
+                android:src="@drawable/_399245_sd" />
 
             <Button
-                android:id="@+id/settingsbutton"
+                android:id="@+id/checkwearablesButton"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_gravity="right"
-                android:layout_marginRight="30dip"
-                android:width="1dip"
-                android:background="#8A8686"
-                android:text="Serttings" />
+                android:layout_height="66dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/fakitbutton"
+                android:gravity="center"
+                android:padding="15dip"
+                android:scrollbars="vertical"
+                android:text="@string/check_for_connected_wearables"
+                android:textColor="?TextInfoColor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/deviceconnectionStatusTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="@string/message_log"
-                    android:textColor="?TextInfoColor"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="455dp"
-                android:orientation="vertical">
-
-                <com.jjoe64.graphview.GraphView
-                    android:id="@+id/graph"
-                    android:layout_width="match_parent"
-                    android:layout_height="158dp"
-                    android:background="#F1E6E6"
-                    tools:ignore="MissingClass"
-                    tools:visibility="invisible" />
-
-                <ScrollView
-                    android:id="@+id/scrollviewText"
-                    android:layout_width="match_parent"
-                    android:layout_height="296dp">
-
-                    <TextView
-                        android:id="@+id/messagelogTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scrollbars="vertical"
-                        android:text="@string/init"
-                        android:textColor="?TextViewHeaderColor"
-                        android:textSize="12sp" />
-                </ScrollView>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/deviceconnectionStatusTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:scrollbars="vertical"
-                    android:text="@string/wearable_device_is_connected"
-                    android:textColor="?TextViewHeaderColor"
-                    android:textSize="15sp"
-                    android:visibility="gone" />
-
-                <Button
-                    android:id="@+id/checkwearablesButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="?attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:scrollbars="vertical"
-                    android:text="@string/check_for_connected_wearables"
-                    android:textColor="?TextInfoColor"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="1dp"
-                android:orientation="vertical">
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/message"
-                    android:textColorHint="?TextViewHeaderColor"
-                    android:visibility="gone">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/messagecontentEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:maxLines="1"
-                        android:textColor="?TextInfoColor"
-                        android:textSize="15sp"
-                        android:visibility="visible" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="1dp"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
-
-                <Button
-                    android:id="@+id/sendmessageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="?attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:scrollbars="vertical"
-                    android:text="@string/send_message_alt"
-                    android:textColor="?TextInfoColor"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
-            </LinearLayout>
-
+                android:gravity="center"
+                android:paddingTop="10dip"
+                android:scrollbars="vertical"
+                android:textColor="#000000"
+                android:textColorHint="#8F8686"
+                android:textSize="15sp"
+                android:visibility="invisible"
+                tools:visibility="invisible" />
 
         </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

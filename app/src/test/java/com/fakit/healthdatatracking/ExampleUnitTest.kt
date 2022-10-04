@@ -1,4 +1,4 @@
-package com.fakit.wearabledatalayer
+package com.fakit.healthdatatracking
 
 import org.junit.Test
 

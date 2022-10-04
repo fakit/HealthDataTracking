@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.245" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable/fakitbutton.xml" value="0.308" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable/ic_baseline_connect_wear_24.xml" value="0.245" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.245" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable/ic_launcher_background.xml" value="0.245" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable/messages.xml" value="0.245" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable/sync.xml" value="0.245" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_edit_wear_data.xml" value="0.3472222222222222" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_help.xml" value="0.36666666666666664" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_main.xml" value="0.26409495548961426" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_main_symptoms.xml" value="0.22" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_oder_symptoms.xml" value="0.22" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_settings.xml" value="0.22" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_vorerkrankungen.xml" value="0.290625" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/settings_activity.xml" value="0.18802083333333333" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/toast_text.xml" value="0.3046875" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/xml/header_preferences.xml" value="0.290625" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/xml/messages_preferences.xml" value="0.290625" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/app/src/main/res/xml/sync_preferences.xml" value="0.290625" />
+        <entry key="..\:/fakit/HTW/_Masterarbeit/HealthDataTracking/wear/src/main/res/layout/activity_main.xml" value="0.40714285714285714" />
+        <entry key="..\:/fakit/New Work/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.363" />
+        <entry key="..\:/fakit/New Work/_Masterarbeit/HealthDataTracking/app/src/main/res/drawable/ic_launcher_background.xml" value="0.363" />
+        <entry key="..\:/fakit/New Work/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/fakit/New Work/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_main_symptoms.xml" value="0.3619791666666667" />
+        <entry key="..\:/fakit/New Work/_Masterarbeit/HealthDataTracking/app/src/main/res/layout/activity_settings.xml" value="0.1" />
+        <entry key="..\:/fakit/New Work/_Masterarbeit/HealthDataTracking/app/src/main/res/menu/main_menu.xml" value="0.2578125" />
+        <entry key="..\:/fakit/New Work/_Masterarbeit/HealthDataTracking/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.175" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

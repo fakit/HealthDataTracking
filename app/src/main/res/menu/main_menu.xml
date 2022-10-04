@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_connect_wear"
+        android:icon="@drawable/ic_baseline_connect_wear_24"
+        android:onClick="reconnect"
+        android:title="@string/reconnect"
+        app:showAsAction="always" />
+    <item android:id="@+id/item_settings"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_settings_24"
+        app:showAsAction="ifRoom"
+        android:onClick="settings_activity"
+        android:title="@string/menu_settings">
+    </item>
+    <group android:id="@+id/other_settings"
+        android:orderInCategory="101"
+        app:showAsAction="never"
+        android:title="@string/other">
+
+        <item android:id="@+id/mainsymptome"
+            android:orderInCategory="102"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:onClick="mainsymptoms_activity"
+            android:title="@string/menu_mainsymptome">
+        </item>
+        <item android:id="@+id/symptome"
+            android:orderInCategory="103"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:onClick="odersymptoms_activity"
+            android:title="@string/menu_symptome">
+        </item>
+        <item android:id="@+id/health_data"
+            android:orderInCategory="104"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:onClick="help_activity"
+            android:title="@string/help">
+        </item>
+
+    </group>
+</menu>
+

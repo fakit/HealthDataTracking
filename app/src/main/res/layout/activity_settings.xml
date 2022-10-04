@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarsettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:gravity="center|top"
+            android:minHeight="?attr/actionBarSize"
+
+            android:theme="?attr/actionBarTheme"
+            app:popupTheme="@style/ToolbarStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dip"
+                android:background="@android:color/holo_blue_light">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dip"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dip"
+                        android:layout_marginBottom="50dip"
+                        android:gravity="center"
+                        android:text="Nutzer Daten"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/age"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/age"
+                            android:inputType="numberSigned"
+                            android:minHeight="48dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/weight"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="numberSigned"
+                            android:minHeight="48dp"
+                            android:hint="@string/weight"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="100dp"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/sex"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/radioGroup">
+
+                            <RadioButton
+                                android:id="@+id/maennlich"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:text="Männlich" />
+
+                            <RadioButton
+                                android:id="@+id/weiblich"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:checked="true"
+                                android:text="Weiblich"
+                                android:textColorLink="#000000" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/temperature"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextTemperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/temperature"
+                            android:inputType="numberDecimal"
+                            android:minHeight="48dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/hearthbeat"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextHerzschlag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/hearthbeat"
+                            android:inputType="numberDecimal"
+                            android:minHeight="48dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/pressure"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextBlutdruck"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/pressure"
+                            android:inputType="numberDecimal"
+                            android:minHeight="48dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/light"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextLicht_Intensitaet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/light"
+                            android:inputType="numberDecimal"
+                            android:minHeight="48dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/acceleration"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                        <EditText
+                            android:id="@+id/editTextLinearAcceleration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/acceleration"
+                            android:inputType="numberDecimal"
+                            android:minHeight="48dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="200dip"
+                            android:layout_height="50dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Feutigkeit"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                        <EditText
+                            android:id="@+id/editTextFeutigkeit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/humidity"
+                            android:inputType="numberDecimal"
+                            android:minHeight="48dp" />
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="100dip"
+                        android:layout_marginBottom="50dip"
+                        android:gravity="center"
+                        android:text="Vorerkrankungen"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="60dip"
+                        android:layout_marginBottom="50dip"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxHerzerkrankungen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="20dip"
+                            android:paddingBottom="20dip"
+                            android:text="Herzerkrankungen"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxLungenerkrankungen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="20dip"
+                            android:paddingBottom="20dip"
+                            android:text="Lungenerkrankungen"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxDiabetes_mellitus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="20dip"
+                            android:paddingBottom="20dip"
+                            android:text="Diabetes mellitus"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxNierenerkrankungen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="20dip"
+                            android:paddingBottom="20dip"
+                            android:text="Nierenerkrankungen"
+                            android:textSize="20sp" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxMalignom"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="20dip"
+                            android:paddingBottom="20dip"
+                            android:text="Malignom"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelbtnuserdata"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Cancel"
+                    android:onClick="cancelbtnuserdata"
+
+                    />
+
+                <Button
+                    android:id="@+id/savebtnuserdata"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Save"
+                    android:onClick="savebtnuserdata"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OderSymptomsActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarodersymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+
+                app:popupTheme="@style/ToolbarStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dip"
+                    android:background="@android:color/holo_blue_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dip"
+                            android:layout_marginBottom="50dip"
+                            android:gravity="center"
+                            android:text="Oder Symptoms"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginBottom="50dp"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/checkBoxMuskelundGliederschmerzen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Muskel- und Gliederschmerzen"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxBauchschmerzen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Bauchschmerzen"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxBindehautentzuendung"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Bindehautentzündung"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxHautausschlag"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Hautausschlag"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxleichterespiratorischeSymptome"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="leichte respiratorische Symptome"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxAtemnot"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Atemnot"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxHalsundKopfschmerzen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Hals- und Kopfschmerzen"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxSchuettelfrost"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Schüttelfrost"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxuebelkeitErbrechen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Übelkeit, Erbrechen"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxDurchfall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Durchfall"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxAppetitlosigkeit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Appetitlosigkeit"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxGewichtsverlust"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Gewichtsverlust"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxStarkeBindehautentzuendung"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Starke Bindehautentzündung"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxLymphknotenschwellung"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Lymphknotenschwellung"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxApathie"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Apathie"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxBenommenheit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Benommenheit"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxLeichteErkaeltungssymptome"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Leichte Erkältungssymptome"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxPneumonie1Grad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Pneumonie 1. Grad"
+                                android:textSize="20sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBoxPneumonie2Grad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dip"
+                                android:paddingBottom="20dip"
+                                android:text="Pneumonie 2. Grad"
+                                android:textSize="20sp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/cancelbtnOderSymptomes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Cancel"
+                        android:onClick="cancelbtnOderSymptomes"/>
+
+                    <Button
+                        android:id="@+id/savebtnOderSymptomes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Save"
+                        android:onClick="savebtnOderSymptomes"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

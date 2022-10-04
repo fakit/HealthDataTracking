@@ -54,13 +54,16 @@
                         android:id="@+id/scrollviewTextMessageLog"
                         android:layout_width="match_parent"
                         android:layout_height="54dp"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center"
                         android:paddingBottom="4dp"
                         android:scrollbars="vertical">
 
                         <TextView
                             android:id="@+id/messagelogTextView"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:paddingStart="9dp"
                             android:paddingEnd="9dp"
                             android:scrollbars="vertical"
@@ -96,7 +99,6 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:backgroundTint="@color/blue_a400"
-                        android:shadowColor="#FFFFFF"
                         android:text="@string/start_sending"
                         android:textColor="@color/cardview_light_background"
                         android:textColorHint="@color/blue_a400"

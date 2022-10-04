@@ -7,7 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <!-- Background colours -->
-        <item name="android:colorBackground">#101010</item>
+        <item name="android:colorBackground">#7d838a</item>
 
         <!--Color for textview and buttons-->
         <item name="TextViewHeaderColor">#d7d7d7</item>
@@ -18,5 +18,8 @@
         <item name="CardBGColor">#000</item>
         <item name="ViewLayoutColor">#101010</item>
     </style>
-
+    <style name="ToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">#6FA6ED</item>
+        <item name="android:textColor">#000</item>
+    </style>
 </resources>

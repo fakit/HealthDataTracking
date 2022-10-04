@@ -6,7 +6,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
     defaultConfig {
-        applicationId "com.fakit.wearabledatalayer"
+        applicationId "com.fakit.healthdatatracking"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 5
@@ -21,6 +21,10 @@ android {
     }
     buildFeatures {
         viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {

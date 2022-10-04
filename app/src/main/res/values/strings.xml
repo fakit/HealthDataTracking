@@ -1,13 +1,12 @@
 <resources>
-    <string name="app_name">Communication using Wearable Data Layer</string>
-    <string name="wearable_device_is_connected">Wearable device is connected</string>
+    <string name="app_name">HealthDataTracking</string>
     <string name="tap_to_edit_message">Tap to edit</string>
     <string name="send_message_to_wearable">Send to wearable</string>
     <string name="wearable_message">Wearable Data</string>
     <string name="message">content</string>
-    <string name="message_log">Data log</string>
+    <string name="message_log">Data Graph</string>
     <string name="init">...</string>
-    <string name="check_for_connected_wearables">Check for connected wearables</string>
+    <string name="check_for_connected_wearables">Connect Wearable</string>
     <string name="send_message_alt">Send to Wearable</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
@@ -19,10 +18,46 @@
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>
 
+
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="reconnect">reconnect</string>
+    <string name="menu_settings">settings</string>
+    <string name="other">other</string>
+
+    <!-- Strings related to the Alert Dialog -->
+    <string name="notification_listener_service">"Notification Listener Service"</string>
+    <string name="notification_listener_service_explanation">"For the the app. to work you need to enable the Notification Listener Service. Enable it now?"</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="menu_health_data">Edit Health Data</string>
+    <string name="menu_mainsymptome">Main symptoms</string>
+    <string name="menu_symptome">Andere Symptome</string>
+    <string name="speichern">Speichern</string>
+    <string name="abrechen">Abrechen</string>
+    <string name="alkohol_getrunken">Alkohol getrunken</string>
+    <string name="letzte_2_wochen_positiv_getestet">Letzte 2 Wochen Positiv getestet</string>
+    <string name="gelenkschmerzen">Gelenkschmerzen</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="man">MAN</string>
+    <string name="frau">FRAU</string>
+    <string name="fieber">Fieber</string>
+    <string name="in_aktivit_t">In Aktivität</string>
+    <string name="wear_sample">Wear Sample</string>
+    <string name="help">Help</string>
+    <string name="startJobButton">Hinweise</string>
+    <string name="age">Alter</string>
+    <string name="weight">Gewicht</string>
+    <string name="sex">Geschlecht</string>
+    <string name="temperature">Temperatur</string>
+    <string name="hearthbeat">Herzschlag</string>
+    <string name="pressure">Blutdruck</string>
+    <string name="light">Licht Intensität</string>
+    <string name="acceleration">Beschleunigung</string>
+    <string name="humidity">Feuchtigkeit</string>
+
 </resources>
